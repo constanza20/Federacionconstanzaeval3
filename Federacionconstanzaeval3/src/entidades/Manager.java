@@ -137,7 +137,7 @@ public class Manager {
 	public String data() {
 		return "" + persona.getId() + "|" + persona.getNombre() + "|" + persona.getNifnie().mostrar() + "|"
 				+ persona.getFechaNac().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "|" + persona.getTelefono()
-				+ "|" + this.id + "|" + this.telefono + "|" + this.direccion;
+				+ "|" + this.id + "|" + this.telefono + "|" + this.direccion; 
 	}
 
 	/***

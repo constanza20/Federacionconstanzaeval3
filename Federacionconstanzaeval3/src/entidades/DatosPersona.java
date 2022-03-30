@@ -13,6 +13,7 @@ public class DatosPersona {
 	private String telefono;
 	private LocalDate fechaNac;
 
+	private DatosPersona persona;
 	private Documentacion nifnie; //Examen 2 Ejercicio 3.2
 
 	public DatosPersona(long id, String nombre, String telefono, LocalDate fechaNac) {
@@ -133,5 +134,13 @@ public class DatosPersona {
 		ret = new DatosPersona(id, nombre, tfn, fecha, doc);
 		return ret;
 	}
-
+	/**
+	 * Función que devuelve una cadena de caracteres con la siguiente estructura
+	 * <idPersona> | <nombre> | <telefono> | <fechaNac(dd/MM/YYYY)> | <NIFNIE>
+	 * Cada campo se separa mediante el caracter '|'
+	 */
+	public String data() {
+		return "" + persona.getId() + "|" + persona.getNombre() + "|" +persona.getTelefono()+ "|"  
+		+ persona.getFechaNac().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + persona.getNifnie().mostrar() ; 
+	}
 }

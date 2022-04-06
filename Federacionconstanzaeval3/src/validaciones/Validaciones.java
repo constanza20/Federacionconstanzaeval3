@@ -39,6 +39,17 @@ public class Validaciones {
 		Matcher comprobacion = patron.matcher(nombre);
 		return comprobacion.matches();//
 	}
+	
+	public static boolean validarweb(String web) {
+		// regEx general para cadena de caracteres con longitud entre 1 y 50 caracteres,
+		// aceptando dígitos, letras MAYUS y minúsculas, con tildes, diréresis y
+		// diferentes símbolos especiales
+		// Pattern patron = Pattern.compile("[
+		// 0-9A-Za-zñÑáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ¡!¿?@#$%()=+-€/.,]{1,50}");
+		Pattern patron = Pattern.compile("[ A-Za-zñÑáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ-]{3,50}");
+		Matcher comprobacion = patron.matcher(web);
+		return comprobacion.matches();//
+	}
 
 	/**
 	 * 

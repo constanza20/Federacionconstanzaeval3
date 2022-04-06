@@ -18,6 +18,7 @@ public class Prueba {
 	private Colegiado[] arbitraje = new Colegiado[3];
 	private Resultado resultado = null;
 	private Participante[] participantes;
+	private Patrocinador[] patrocinador;
 
 	public Prueba(long id, String nombre, LocalDate fecha, Lugar lugar, boolean ind) {
 		this.id = id;
@@ -66,6 +67,36 @@ public class Prueba {
 		this.participantes = participantes;
 		this.arbitraje = arbitraje;
 		this.resultado = res;
+	}
+	public Prueba(long id, String nombre, LocalDate fecha, Lugar lugar, boolean ind, Participante[] participantes,
+			Colegiado[] arbitraje, Resultado res, Patrocinador[] patrocinador) {
+		this.id = id;
+		this.nombre = nombre;
+		this.fecha = fecha;
+		this.lugar = lugar;
+		this.individual = ind;
+		this.participantes = participantes;
+		this.arbitraje = arbitraje;
+		this.resultado = res;
+		this.patrocinador=patrocinador;
+	}
+
+
+	public Patrocinador[] getPatrocinador() {
+		return patrocinador;
+	}
+
+	public void setPatrocinador(Patrocinador[] patrocinador) {
+		this.patrocinador = patrocinador;
+	}
+	
+
+	public Colegiado[] getArbitraje() {
+		return arbitraje;
+	}
+
+	public void setArbitraje(Colegiado[] arbitraje) {
+		this.arbitraje = arbitraje;
 	}
 
 	public Resultado getResultado() {

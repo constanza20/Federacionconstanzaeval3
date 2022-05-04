@@ -316,4 +316,14 @@ public class Prueba {
 		return ret;
 	}
 
-}
+	
+	  public int compareTo(Prueba p1, Prueba p2) {
+		 
+	        if (p1.getFecha().compareTo(p2.getFecha()) != 0) {
+	            return p1.getFecha().compareTo(p2.getFecha());
+	        } else {
+	            return p1.getFecha().compareTo(p2.getFecha());
+	        }
+	    }
+	}
+

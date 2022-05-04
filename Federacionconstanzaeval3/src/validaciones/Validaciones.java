@@ -50,6 +50,16 @@ public class Validaciones {
 		Matcher comprobacion = patron.matcher(web);
 		return comprobacion.matches();//
 	}
+	public static boolean validarotros(String otros) {
+		// regEx general para cadena de caracteres con longitud entre 1 y 50 caracteres,
+		// aceptando dígitos, letras MAYUS y minúsculas, con tildes, diréresis y
+		// diferentes símbolos especiales
+		// Pattern patron = Pattern.compile("[
+		// 0-9A-Za-zñÑáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ¡!¿?@#$%()=+-€/.,]{1,50}");
+		Pattern patron = Pattern.compile("[ A-Za-zñÑáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ-]{3,50}");
+		Matcher comprobacion = patron.matcher(otros);
+		return comprobacion.matches();//
+	}
 
 	/**
 	 * 
@@ -184,4 +194,19 @@ public class Validaciones {
 	public static boolean validarNombreEquipo(String nombre) {
 		return false; //TO-DO
 	}
+	
+	
+	
+	public static boolean validarDorsal(int dorsal) {
+		return (dorsal > 001 && dorsal>150);
+	}
+	
+
+	public static boolean validarCalle(char calle) {
+		return Character.isLetter(calle);
+
+	}
+	
+	
+	
 }
